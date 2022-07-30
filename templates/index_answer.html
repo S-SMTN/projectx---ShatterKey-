@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Request
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <form action="/" method="post">
+                <div class="input-group mb-3">
+                    <button class="btn btn-danger" type="submit" id="button-addon2">Find</button>
+                    <input type="text" class="form-control" placeholder="description" aria-label="Recipient's username" aria-describedby="button-addon2" id="description" name="description" value='{{searched}}'>
+                </div>
+            </form>
+        </div>
+        <div class="row column-wrapper">
+            <div class="col column-left">
+                <body>
+                    <div class="keys-title "><!-- KeyWords --></div>
+                        <div class="btn-group keys-list-buttons" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-secondary keys-list-buttons" onclick='checkedAll()'>Check All</button>
+                            <button type="button" class="btn btn-secondary keys-list-buttons" onclick='uncheckedAll()'>Uncheck All</button>
+                            <button type="button" class="btn btn-secondary keys-list-buttons" onclick="addToClipboard();">Copy to clipboard</button>
+                        </div>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item keys-list-head-key">Total keywords</li>
+                            <li class="list-group-item keys-list-head-count" id="totalKwrds"></li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item keys-list-head-key">Checked keywords</li>
+                            <li class="list-group-item keys-list-head-count" id="checkedKwrds"></li>
+                        </ul>
+                    <div class="keys-list" id="motherDiv">
+                        <form id="keywordsForm">
+                            <!-- {% for key in keywords %}
+                                <ul class="list-group list-group-horizontal">
+                                    <li class="list-group-item keys-list-key">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="{{key}}" onchange="countcheck()">
+                                            <label class="form-check-label" for="{{key}}">{{key}}</label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item keys-list-count">{{keywords[key]}}</li>
+                                </ul>
+                            {% endfor %} -->
+                        </form>
+                    </div>
+                </body>
+            </div>
+            <form id="cardForm">
+                <div class="col column-right">
+                    <!-- <p align="center">Images</p> -->
+                    <div class="row">
+                        <div class="row" >
+                            <div class="col"></div>
+                            <div class="col">
+                                <div class="btn-group card-list-buttons" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-secondary" onclick="checkAllCards()">Check All</button>
+                                    <button type="button" class="btn btn-secondary" onclick="UnCheckAllCards()">Uncheck All</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row cards_block" id="photoCards">
+                        {% for card in Cards %}
+                            <div class="col">
+                                <img id="{{card.id}}" src={{card.preview}} alt="image" width="100px" type="button" data-id="{{card.id}}" data-description="{{card.description}}" data-preview="{{card.preview}}" data-url="{{card.url}}" data-keys="{{card.keywords}}" class="cardinfo">
+                                <p><button type="button" class="btn btn-secondary btn-sm btn-card-excluded" id="b_{{card.id}}" data-keys="{{card.keywords}}" onclick="button_card({{card.id}})">Excluded</button></p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="empModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h4 class="modal-title"><div align="center">Photo's description</div></h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/main.js"></script>
+{% endblock %}
