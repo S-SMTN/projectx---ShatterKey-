@@ -30,3 +30,17 @@ Block of keywords.
 3. The height of the block of keywords is tied either to the height of the photo block, or to the height of the displayed page, if the photo block has a small number of results. If the list is larger than the parameters listed above, it becomes scrollable.
 4. The list of keywords is sorted in descending order according to the "number of mentions" column. Information about the number of mentions is also displayed in the list next to each keyword.
 5. The "copy to clipboard" button opens a modal window that displays information about the number of copied keywords and a list of these keywords. When you click on the "copy to clipboard" button, all selected keywords are automatically copied to the clipboard as a string, where each keyword is separated by a comma and a space (keyword1, keyword2), without quotes. This way you can immediately paste them into the caption of the photo you want to submit for Shutterstock review in the format Shutterstock requires.
+
+The main functions of the application, such as configuration, processing get and post requests are located in the app.py file.
+The parsing function is located in the parsing.py file.
+
+Template list:
+/templates/layout.html - main page template, including header and extension block.
+/templates/index_empty.html - extension of the /templates/layout.html template, including the request form.
+/templates/index_answer.html - extension of the /templates/layout.html template, including a request form and blocks with photo previews and keyword management.
+/templates/response.html - template for a modal window with photo information.
+/templates/responseclipboard.html - modal window template with information about copied keywords.
+
+/static/styles.css - file with custom css styles.
+
+/static/js/main.js - a file that contains all the logic on the user's side: changing the design of buttons to select / deselect photos and keywords, AJAX technology for modal windows and dynamic display of a list of keywords, dynamic display of the entire number and quantity selected keywords.
