@@ -101,12 +101,12 @@ function button_card(cardId){
     if (classesButton.contains('btn-card-excluded')) {
         classesButton.toggle('btn-card-excluded');
         classesButton.toggle('btn-card-included');
-        buttonCard.innerHTML = 'Included';
+        buttonCard.innerHTML = 'Exclude';
     }
     else if (classesButton.contains('btn-card-included')){
         buttonCard.classList.remove('btn-card-included');
         buttonCard.classList.add('btn-card-excluded');
-        buttonCard.innerHTML = 'Excluded';
+        buttonCard.innerHTML = 'Include';
     };
     dynamic_list()
     countcheck()
