@@ -92,7 +92,7 @@ function addToClipboard(){
     copyhelper.remove()
 }
 
-/* dynamic style of card's button (include/exclude) */
+/* dynamic style of card's button (include/exclude) ...*/
 
 function button_card(cardId){
     cardId = `b_`+cardId;
