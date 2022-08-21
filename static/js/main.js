@@ -208,7 +208,7 @@ function checkAllCards() {
     for (let i = 1; i < formCards.length; i += 2){
         let button = formCards[i].childNodes[3].childNodes[0];
         button.setAttribute('class', 'btn btn-secondary btn-sm btn-card-included');
-        button.innerHTML = 'Included';
+        button.innerHTML = 'Exclude';
     }
     dynamic_list();
 }
@@ -218,7 +218,7 @@ function UnCheckAllCards() {
     for (let i = 1; i < formCards.length; i += 2){
         let button = formCards[i].childNodes[3].childNodes[0];
         button.setAttribute('class', 'btn btn-secondary btn-sm btn-card-excluded');
-        button.innerHTML = 'Exluded';
+        button.innerHTML = 'Include';
     }
     dynamic_list();
 }
