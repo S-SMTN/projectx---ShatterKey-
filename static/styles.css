@@ -109,4 +109,16 @@ body
 
 .cards_block {
     padding-top: 10px;
+    
+}
+
+.photo_block{
+    height: 130px;
+}
+
+.inphoto_block{
+    position: relative;
+    margin: 0;
+    top: 50%;
+    transform: translate(0, -50%)
 }
