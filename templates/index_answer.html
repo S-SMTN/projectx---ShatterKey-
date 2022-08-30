@@ -66,7 +66,7 @@
                         {% for card in Cards %}
                             <div class="col">
                                 <div class="photo_block">
-                                    <img class="inphoto_block" id="{{card.id}}" src={{card.preview}} alt="image" width="100px" type="button" data-id="{{card.id}}" data-description="{{card.description}}" data-preview="{{card.preview}}" data-url="{{card.url}}" data-keys="{{card.keywords}}" class="cardinfo">   
+                                    <img class="cardinfo inphoto_block" id="{{card.id}}" src={{card.preview}} alt="image" width="100px" type="button" data-id="{{card.id}}" data-description="{{card.description}}" data-preview="{{card.preview}}" data-url="{{card.url}}" data-keys="{{card.keywords}}" class="cardinfo">   
                                 </div>
                                 <p><button type="button" class="btn btn-secondary btn-sm btn-card-excluded" id="b_{{card.id}}" data-keys="{{card.keywords}}" onclick="button_card({{card.id}})">Include</button></p>
                             </div>
